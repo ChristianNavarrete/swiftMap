@@ -14,6 +14,7 @@
 		A9FF2EEA1ACF39410052890C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9FF2EE81ACF39410052890C /* LaunchScreen.xib */; };
 		A9FF2EF61ACF39410052890C /* MapsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9FF2EF51ACF39410052890C /* MapsTests.swift */; };
 		A9FF2F001ACF3E760052890C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FF2EFF1ACF3E760052890C /* MapKit.framework */; };
+		A9FF2F021ACF62580052890C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9FF2F011ACF62580052890C /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		A9FF2EF41ACF39410052890C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9FF2EF51ACF39410052890C /* MapsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsTests.swift; sourceTree = "<group>"; };
 		A9FF2EFF1ACF3E760052890C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A9FF2F011ACF62580052890C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9FF2F021ACF62580052890C /* CoreLocation.framework in Frameworks */,
 				A9FF2F001ACF3E760052890C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,6 +65,7 @@
 		A9FF2ED11ACF39410052890C = {
 			isa = PBXGroup;
 			children = (
+				A9FF2F011ACF62580052890C /* CoreLocation.framework */,
 				A9FF2EFF1ACF3E760052890C /* MapKit.framework */,
 				A9FF2EDC1ACF39410052890C /* Maps */,
 				A9FF2EF21ACF39410052890C /* MapsTests */,
@@ -411,6 +415,7 @@
 				A9FF2EFB1ACF39410052890C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9FF2EFC1ACF39410052890C /* Build configuration list for PBXNativeTarget "MapsTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +424,7 @@
 				A9FF2EFE1ACF39410052890C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

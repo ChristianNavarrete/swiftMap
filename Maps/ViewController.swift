@@ -8,13 +8,26 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, MKMapViewDelegate {
+
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var map: MKMapView!
     
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //changed this!
+        
+        //find the users locations using CoreLocation Framework!
+        
+//        self.locationManager.delegate = self
+//        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        self.locationManager.requestWhenInUseAuthorization()
+//        self.locationManager.startUpdatingLocation()
         
         var latitude:CLLocationDegrees = 35.6833
         var longitude:CLLocationDegrees = 139.6833
@@ -48,8 +61,31 @@ class ViewController: UIViewController, MKMapViewDelegate {
         
     }
     
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        
+        var userLocation:CLLocation = locations[0] as CLLocation
+        
+        var latitude = userLocation.coordinate.latitude
+        var longitude = userLocation.coordinate.longitude
+        
+        var latDelta:CLLocationDegrees = 0.01
+        var lonDelta:CLLocationDegrees = 0.01
+        
+        var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        var location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        var region:MKCoordinateRegion = MKCoordinateRegionMake(location,span)
+        
+        self.map.setRegion(region, animated:true)
+        
+        
+    }
+    
     
     func action(gestureRecognizer: UIGestureRecognizer) {
+        
+        var didAddAnnotation = false
         
         var touchPoint = gestureRecognizer.locationInView(self.map)
         
@@ -62,8 +98,11 @@ class ViewController: UIViewController, MKMapViewDelegate {
         annotation.title = "New Spot"
         
         annotation.subtitle = "Someday i'll go here"
+        
 
-        map.addAnnotation(annotation)
+        self.map.addAnnotation(annotation)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
